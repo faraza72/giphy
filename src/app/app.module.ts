@@ -11,13 +11,18 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { QuillModule } from 'ngx-quill';
+import { QuillTextEditorComponent } from './quill-text-editor/quill-text-editor.component';
+import { GiphyComponent } from './giphy/giphy.component'
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuillTextEditorComponent,
+    GiphyComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatGridListModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    QuillModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

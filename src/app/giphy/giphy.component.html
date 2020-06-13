@@ -1,0 +1,27 @@
+<div id="cover">
+    <form [formGroup]="newForm" (ngSubmit)="getAllGiphy()">
+        <div class="tb">
+            <div class="td"><input type="text" placeholder="Search" formControlName="giphy_name" required></div>
+            <div class="td" id="s-cover">
+                <button type="submit" [disabled]="!newForm.controls.giphy_name.valid">
+                    <div id="s-circle"></div>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="content">
+    <mat-grid-list cols="5" rowHeight="2:1" *ngIf="all_giphy">
+        <mat-grid-tile *ngFor="let giphy of all_giphy.data| slice:0:min_giphy">
+            <mat-card class="example-card">
+                <img mat-card-image src={{giphy.images.fixed_width_small.webp}} style="height: 60px;"
+                    alt="Photo of a Shiba Inu">
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <button *ngIf="all_giphy && all_giphy.data && all_giphy.data.length > 18" mat-button color="primary"
+        (click)=showMore()> Show More</button>
+</div>
