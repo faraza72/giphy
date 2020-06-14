@@ -6,12 +6,12 @@ import { GiphyComponent } from './giphy/giphy.component';
 
 
 const routes: Routes = [
+  // {
+  //   path:'',
+  //   component: AppComponent,
+  // },
   {
-    path:'',
-    component: AppComponent,
-  },
-  {
-    path: 'giphy',
+    path: '',
     component: GiphyComponent
   },
   {

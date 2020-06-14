@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuillModule } from 'ngx-quill';
 import { QuillTextEditorComponent } from './quill-text-editor/quill-text-editor.component';
 import { GiphyComponent } from './giphy/giphy.component'
+import { MatDialogModule } from '@angular/material/dialog';
+import { GiphyPopupComponent } from './giphy-popup/giphy-popup.component'
 
 
 
@@ -22,7 +24,8 @@ import { GiphyComponent } from './giphy/giphy.component'
   declarations: [
     AppComponent,
     QuillTextEditorComponent,
-    GiphyComponent
+    GiphyComponent,
+    GiphyPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +37,13 @@ import { GiphyComponent } from './giphy/giphy.component'
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+    MatDialogModule
   ],
   providers: [],
+  entryComponents: [
+    GiphyPopupComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

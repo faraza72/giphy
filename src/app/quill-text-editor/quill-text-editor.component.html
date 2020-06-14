@@ -1,3 +1,20 @@
 <h1>Simple Quill Editor</h1>
 
-<quill-editor class="content" [styles]="{height: '200px'}"></quill-editor>
+<quill-editor class="content" [styles]="{height: '300px'}" (onEditorCreated)="getEditorInstance($event)">
+    <div quill-editor-toolbar>
+        <span class="ql-formats">
+          <button class="ql-image" [title]="'Images'"></button>
+        </span>
+        <span class="ql-formats">
+          <select class="ql-align" [title]="'Aligment'">
+            <option selected></option>
+            <option value="center"></option>
+            <option value="right"></option>
+            <option value="justify"></option>
+          </select>
+        </span>
+        <span class="ql-formats">
+            <button class="ql-giphy" [title]="'Giphy'" (click)=openLoginModal($event)><strong>G</strong></button>
+        </span>
+      </div>
+</quill-editor>
